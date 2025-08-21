@@ -14,7 +14,7 @@ pragma solidity ^0.8.24;
  * - Triples 111..666                         -> 6 combos
  * - Pair+odd (point = odd die)               -> 30 combos (for each point P, pick any pair value != P)
  *
- * We map a pseudo-random seed -> uniform index in [0..37] and deterministically construct the hand.
+ * We preenumerate all 38 hands that end a roll sequence and pick one randomly.
  *
  */
 contract RNRCelo is ReentrancyGuard {
@@ -440,3 +440,4 @@ contract Deployer {
       );
    }
 }
+
