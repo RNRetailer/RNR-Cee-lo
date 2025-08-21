@@ -8,13 +8,13 @@ pragma solidity ^0.8.24;
 /**
  * Cee-lo
  *
- * Non-neutral outcomes (38 unique sorted multisets):
+ * Rolls that end a turn:
  * - 1-2-3 (auto loss)                        -> 1 combo
  * - 4-5-6 (auto win)                         -> 1 combo
  * - Triples 111..666                         -> 6 combos
  * - Pair+odd (point = odd die)               -> 30 combos (for each point P, pick any pair value != P)
  *
- * We preenumerate all 38 hands that end a roll sequence and pick one randomly.
+ * We enumerate all 38 hands that end a turn when the contract is constructed. During play we just pick one randomly.
  *
  */
 contract RNRCelo is ReentrancyGuard {
@@ -440,4 +440,5 @@ contract Deployer {
       );
    }
 }
+
 
