@@ -14,7 +14,7 @@ pragma solidity ^0.8.24;
  * - Triples 111..666                         -> 6 combos
  * - Pair+odd (point = odd die)               -> 30 combos (for each point P, pick any pair value != P)
  *
- * We enumerate all 38 hands that end a turn when the contract is constructed. During play we just pick one randomly.
+ * We enumerate all 38 rolls that end a turn when the contract is constructed. During play we just pick one randomly.
  *
  */
 contract RNRCelo is ReentrancyGuard {
@@ -440,5 +440,6 @@ contract Deployer {
       );
    }
 }
+
 
 
