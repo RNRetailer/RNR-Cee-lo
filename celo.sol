@@ -331,7 +331,7 @@ contract RNRCelo is ReentrancyGuard {
         if (d[0] == d[1]) return 100 + d[2];
         if (d[1] == d[2]) return 100 + d[0];
 
-        // With our construction there are no neutrals
+        // If we get to this line the roll was invalid.
         return 0;
     }
     
@@ -440,6 +440,7 @@ contract Deployer {
       );
    }
 }
+
 
 
 
